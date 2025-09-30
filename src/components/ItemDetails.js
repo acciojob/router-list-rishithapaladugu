@@ -7,21 +7,21 @@ const items = [
   { id: 3, name: "Item 3", description: "Description for Item 3" },
 ];
 
-const ItemDetail = () => {
+function ItemDetail() {
   const { id } = useParams();
-  const item = items.find((i) => i.id === parseInt(id));
+  const item = items.find((it) => it.id === parseInt(id));
 
   if (!item) {
-    return <h1>Item not found</h1>;
+    return <h2>Item not found</h2>;
   }
 
   return (
     <div>
       <h1>{item.name}</h1>
       <p>{item.description}</p>
-      <Link to="/">Back to List</Link>
+  
     </div>
   );
-};
+}
 
 export default ItemDetail;
